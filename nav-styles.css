@@ -106,3 +106,26 @@ ul {
 ul li {
   padding-left: 0; /* 如果需要，可以添加一些左边距 */
 }
+
+
+
+@media (max-width: 768px) {
+  .navbar-logo img {
+    height: 24px;
+  }
+
+  .navbar-logo span {
+   font-size: 16px;
+  }
+
+  .navbar-menu {
+    font-size: 12px;
+    margin-right: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .navbar-menu a.nav-link {
+    padding: 8px 16px;
+  }
+    }
