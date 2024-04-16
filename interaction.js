@@ -14,6 +14,12 @@
     document.documentElement.scrollTop = 0; // 对于 Chrome, Firefox, IE 和 Opera
   }
   
+  document.addEventListener('DOMContentLoaded', function() {
+    var videoIframe = document.querySelector('iframe[src*="player.bilibili.com"]');
+    if (videoIframe) {
+      videoIframe.contentWindow.postMessage('{"event":"command","name":"stop","value":""}', '*');
+    }
+  });
 
 
 
