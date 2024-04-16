@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>庄紫羽的作品集网站</title>
+<link rel="stylesheet" href="nav-styles.css"> <!-- 链接您的样式表 -->
+
+
+
+</head>
+<body>
+
+<div class="navbar">
+    <!-- 导航栏的内容将从navbar.html插入到这里 -->
+  <div class="navbar-logo">
+    <img src="images/logo.png" alt="Logo"> <!-- 替换为你的logo图片路径 -->
+    <span>Violet's X-Space</span> 
+  </div>
+ <ul class="navbar-menu">
+        <li><a href="#portfolio" class="nav-link active" onclick="showTab(this, 'portfolio')">作品</a></li>
+        <li><a href="#resume" class="nav-link" onclick="showTab(this, 'resume')">简历</a></li>
+  </ul>
+</div>
+<iframe id="iframeContent" class="nav-iframe" src="portfolio.html" style="position: 100px; width: 100%; height: 100vh;"></iframe>
+
+<script>
+
+function showTab(tabLink, tabId) {
+    // 获取所有的Tab链接
+    var tabLinks = document.querySelectorAll('.navbar-menu a.nav-link');
+    for (var i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove('active');
+    }
+    // 为选中的Tab链接添加激活状态
+    tabLink.classList.add('active');
+
+    // 根据Tab ID加载对应的页面
+    var iframe = document.getElementById('iframeContent');
+    iframe.src = tabId === 'portfolio' ? 'portfolio.html' : 'resume.html';
+}
+</script>
+</body>
+
+
+</html>

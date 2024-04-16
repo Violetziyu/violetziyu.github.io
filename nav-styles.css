@@ -1,0 +1,122 @@
+ body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  /* iframe样式 */
+.content-iframe {
+    position: relative; /* 确保iframe不会覆盖导航栏 */
+    /* ... 其他样式 ... */
+}
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 48px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end; /* 将导航内容对齐到右上角 */
+    overflow: hidden; /* 防止内容溢出 */
+    align-items: center;
+  }
+
+  .navbar-logo {
+    margin-right: auto; /* 自动右边距，将logo推向左 */
+    color: #333;
+    display: flex;
+    margin-left: 24px;
+    align-items: center;
+  }
+
+  .navbar-logo img {
+    height: 48px;
+  }
+
+  .navbar-logo span {
+   margin-left: 16px;
+   font-size: 28px;
+   font-weight: 500;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .navbar-menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-right: 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .navbar-menu a {
+    color: #666;
+    text-decoration: none;
+    padding: 0 15px;
+    transition: background-color 0.3s;
+  }
+
+  .navbar-menu a.nav-link {
+    display: block;
+    padding: 16px 24px;
+    text-decoration: none;
+    color: #333;
+  }
+
+
+  /* 定义关键帧动画 */
+  @keyframes expandBackground {
+    from {
+        background-size: 100% 2px; /* 动画开始时，背景宽度为100%，高度为2px */
+    }
+    to {
+        background-size: 100% 100%; /* 动画结束时，背景宽度和高度都为100% */
+    }
+}
+
+  .navbar-menu a.nav-link:hover {
+    color: #255AFF;
+    background-color: #fff;
+    transform: scale(1.05); /* 使背景稍微放大 */
+    animation: expandBackground 0.5s forwards; /* 应用动画 */
+  }
+
+  .navbar-menu a.nav-link.active {
+    color: #255AFF;
+    background-color: #fff;
+    font-weight: 500;
+  }
+
+  .nav-iframe {
+    width: 100%;
+    height: 600px; /* 根据需要调整高度 */
+    border: none; /* 移除iframe边框 */
+  }
+
+
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      
+    }
+
+    .navbar-menu {
+      padding: 10px 0;
+    }
+  }
+
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  padding-left: 0; /* 如果需要，可以添加一些左边距 */
+}
