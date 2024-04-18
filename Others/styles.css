@@ -142,13 +142,13 @@
   }
 
   .small-image.bottom-left {
-    bottom: 4%;
+    bottom: 10%;
     left: 10%;
     border-radius: 4%;  
   }
 
   .small-image.bottom-right {
-    bottom: 4%;
+    bottom: 10%;
     right: 10%;
     border-radius: 4%;  
   }
