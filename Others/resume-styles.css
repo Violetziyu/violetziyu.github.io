@@ -110,6 +110,6 @@ section p {
     position: absolute; /* 绝对定位脱离文档流 */
     top: 100px; /* 从顶部开始的位置 */
     right: 10px; /* 从右侧开始的位置 */
-    width: 120px; /* 头像的宽度，根据需要调整 */
-    height: 120px; /* 高度自适应保持图片比例 */
+    width: 160px; /* 头像的宽度，根据需要调整 */
+    height: 160px; /* 高度自适应保持图片比例 */
 }
