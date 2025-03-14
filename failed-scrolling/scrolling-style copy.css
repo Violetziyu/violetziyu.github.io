@@ -1,0 +1,50 @@
+/* styles.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.image-container {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#long-image {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+
+.text-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+}
+
+.text {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.text.active {
+  opacity: 1;
+}

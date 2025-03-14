@@ -8,6 +8,7 @@
   /* 使用视口高度的50%作为视频播放器的高度 */
   iframe {
     aspect-ratio: 2 / 1; /* 常见的宽高比，例如16:9 */
+    margin: 8px 0; /* 移除默认的外边距 */
   }
 
 
@@ -22,6 +23,22 @@
     object-fit: cover; /* 保持图片的宽高比，同时覆盖整个容器 */
     position: relative; /* 为无缝连接做准备 */
   }
+
+  /* 默认情况下（屏幕宽度小于1025px），图片流占满屏宽 */
+.image-layout {
+  width: 100%;
+}
+
+/* 当屏幕宽度大于或等于1025px时 */
+@media (min-width: 1025px) {
+  .image-layout {
+    width: 80%;
+    max-width: 1440px; /* 最大宽度限制为1440px */
+    margin: 0 auto; /* 居中显示 */
+  }
+}
+
+
 
   /* 无缝连接的伪元素 */
   .image-container img::before {
@@ -43,31 +60,31 @@
 
   /* 第二个元素保持原有的上下外边距设置 */
   .image-container img:nth-child(31) {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
     width:auto
   }
   .image-container img:nth-child(35) {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
     width:auto
   }
   .image-container img:nth-child(39) {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
     width:auto
   }
   .image-container img:nth-child(43) {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
     width:auto
   }
 
@@ -103,7 +120,7 @@
     color: #666; /* 标题文字颜色 */
     text-align: justify; /* 标题居中对齐 */
     line-height: 1.6; /* 行高 */
-    margin: 12px 80px 12px 80px; /* 标题上下外边距 */
+    margin: 12px 0px 12px 0px; /* 标题上下外边距 */
   }
 
   .large-image {
@@ -226,7 +243,7 @@
 
   .back-to-index {
     position: fixed; /* 固定定位 */
-    top: 108px; /* 距离底部20px */
+    top: 92px; /* 距离底部20px */
     left: 16px; /* 距离右侧20px */
     width: 80px; /* 宽度 */
     height: 40px; /* 高度 */
@@ -267,6 +284,6 @@
  
    @media (min-width:768px) {
       .image-container {
-       padding-top: 72px;
+       padding-top: 56px;/*72*/
      } 
    }  
