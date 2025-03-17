@@ -129,11 +129,21 @@
     display: block;
   }
 
+  .index {
+            width: 80%; /* 容器宽度为屏幕宽度的80% */
+            margin: 0 auto; /* 水平居中 */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 三列布局 */
+            gap: 10px; /* 图片间距 */
+            padding: 10px; /* 容器内边距 */  
+  }
+
+          
+
   .small-image {
     margin-bottom: 0; /* 移除小图片下方的外边距 */
     position: absolute;
     transition: box-shadow 0.3s ease; /* 平滑过渡效果 */
-    width:39%
   }
 
 
@@ -142,39 +152,77 @@
     margin-bottom: 0; /* 移除小图片下方的外边距 */
     width: 100%; /* 让图片宽度填满容器 */
     height: auto; /* 保持图片比例 */
-    border-radius: 10px; /* 圆角效果 */
+    z-index: 1;
  }
 
   /* 定义每个小图片的位置 */
   .small-image.top-left {
-    top: 16%;
-    left: 10%;
-    border-radius: 4%;
+    top: 13%;
+    left: 5%;
+    width: 45%;
+    border-color: #fff;
   }
 
   .small-image.top-right {
-    top: 16%;
-    right: 10%;
-    border-radius: 4%;
+    top: 13%;
+    right: 5%;
+    width: 45%;
   }
 
   .small-image.bottom-left {
-    bottom: 4%;
-    left: 10%;
-    border-radius: 4%;  
+    bottom: 3.5%;
+    left: 5%;
+    width: 30%; 
+  }
+
+  .small-image.bottom-middle {
+    bottom: 3.5%;
+    left: 50%;
+    transform: translate(-50%, 0);  
+    width: 30%; 
+
   }
 
   .small-image.bottom-right {
-    bottom: 4%;
-    right: 10%;
-    border-radius: 4%;  
+    bottom: 3.5%;
+    right: 5%;
+    width: 30%; 
+
   }
 
   /* 鼠标悬停时增加阴影 */
   .small-image:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     opacity: 0.9;
+    z-index: 10; 
   }
+
+.overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* 半透明黑色蒙层 */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            flex-direction: column;
+            opacity: 0; /* 默认不显示 */
+            transition: opacity 0.3s ease; /* 平滑过渡效果 */
+        }
+
+.small-image:hover .overlay {
+            opacity: 1; /* 悬停时显示蒙层 */
+            z-index: 11;
+        }
+.overlay p {
+    font-size: 16px; /* 大标题字体大小 */
+    color: #fff; /* 标题文字颜色 */
+    text-align:center; /* 标题居中对齐 */
+    margin: 16px 24px; /* 标题上下外边距 */
+}
 
   .square-box{
     position: absolute;
@@ -204,6 +252,7 @@
     cursor: pointer; /* 鼠标悬停时显示手形光标 */
     opacity: 0.7; /* 初始透明度 */
     transition: opacity 0.3s ease; /* 过渡效果 */
+    z-index: 100;
   }
 
   .back-to-top:hover {
@@ -262,6 +311,7 @@
 
   .back-to-index:hover {
     opacity: 1; /* 鼠标悬停时透明度为1 */
+
   
   }
 

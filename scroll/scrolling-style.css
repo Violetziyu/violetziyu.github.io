@@ -1,0 +1,116 @@
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+/* 纵向排列的主容器 */
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* 纵向排列 */
+}
+
+/* 左右布局的容器 */
+.horizontal-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row; /* 左右布局 */
+  height: 100vh; /* 每个模块占满视口高度 */
+}
+
+/* 左边部分（背景图片） */
+.left-section {
+    flex: 1; /* 左边占一半宽度 */
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+.image-container {
+    position: absolute;
+    top: 50vh;
+    transform: translate(-52%, -50%);
+    width: 54vw; /* 固定宽度 */
+    height: 36vw; /* 固定高度 */
+    overflow: hidden;
+    margin: auto; /* 居中显示 */
+    overflow-y: auto;
+    border: 8px solid black;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.image {
+    position: relative;
+    top: 0;
+    left: 0;
+    /*transform: translate(-50%, -50%);*/
+    width: 54vw; /* 图片宽度自动调整 */
+    height: auto; /* 图片高度与容器一致 */
+    object-fit: cover; /* 确保图片覆盖整个容器 */
+    overflow-y: auto;
+}
+
+.bg-container {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-direction: column; /* 子元素垂直排列 */
+  width: 50vw; /* 图片宽度自动调整 */
+
+}
+
+
+
+.bg-image {
+    width: 54vw; /* 图片宽度自动调整 */
+    transform: translate(-6vw, 0);
+    object-fit: cover; /* 确保图片覆盖整个容器 */
+    filter: blur(2px); /* 模糊程度为5px */
+    opacity: 0.5;
+    transition: filter 0.3s ease; /* 添加过渡效果，使模糊效果更平滑 */
+
+    /* 在图片上方和下方增加空白 */
+    margin-top: calc(50vh - 18vw);
+    margin-bottom: calc(50vh - 18vw);
+}
+
+
+
+
+/* 右边部分（文字内容） */
+.right-section {
+    flex: 1; /* 右边占一半宽度 */
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  }
+  
+  .content {
+    text-align: center;
+    max-width: 80%; /* 控制文字宽度 */
+  }
+  
+  .content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
